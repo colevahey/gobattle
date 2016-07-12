@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	fmt.Println(c.Clear + c.Red + "GOBATTLE")
-	var player = input.Ask("What is your player name? >> " + c.Magenta)
-	fmt.Println(c.Red + "Welcome " + player)
+	fmt.Println(c.Clear + c.B3 + "GOBATTLE")
+	var player = input.Ask("What is your player name? >> " + c.Blue)
+	fmt.Println(c.B3 + "Welcome " + player)
 }
