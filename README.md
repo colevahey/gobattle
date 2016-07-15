@@ -12,4 +12,3 @@ function. This does present problems when there is an unacceptable
 input and the function must begin again. I did find the time.Sleep
 package so I can give the player time to read the message as it
 flashes on the screen.
-![Turtle](http://cdn.arstechnica.net/wp-content/uploads/2016/02/5718897981_10faa45ac3_b-640x624.jpg)
