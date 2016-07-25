@@ -51,8 +51,7 @@ func red() {
 }
 
 func qeasy() {
-	var thisis = rand.Intn(63)
-	rand.Seed(thisis)
+	rand.Seed(100)
 	var subnum1 = rand.Intn(100)
 	var subnum2 = rand.Intn(100)
 	//var addnum1 = rand.Intn(100)
