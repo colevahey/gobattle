@@ -12,7 +12,7 @@ import (
 
 func main() {
 	fmt.Println(c.Clear + c.B3 + "Welcome to Gobattle")
-	fmt.Println("Gobattle is a single player game where you battle the cpu to answer questions.")
+	fmt.Println("Gobattle is a single player game where you battle the global average to answer questions.")
 	time.Sleep(1 * time.Second)
 	fmt.Println("There are two teams you can play with. The Blue Team and the Red Team.")
 	time.Sleep(1 * time.Second)
@@ -22,7 +22,7 @@ func main() {
 	time.Sleep(1 * time.Second)
 	fmt.Println(c.B3 + "Which team would you like to join?")
 	fmt.Println(c.Blue + "Blue Team" + c.B3 + " or " + c.Red + "Red Team" + c.B3 + "?")
-	var team = input.Ask(c.Green + "")
+	var team = input.Ask(c.B3 + "")
 	team = strings.Title(team)
 	if team == "Blue Team" {
 		fmt.Println(c.Blue + "You have joined the Blue Team")
@@ -41,31 +41,105 @@ func main() {
 
 func blue() {
 	fmt.Println(c.Clear + "Welcome to the Blue Team.")
-	qeasy()
 }
 
 func red() {
 	fmt.Println(c.Clear + "Welcome to the Red Team.")
-	fmt.Println("Here is your first question")
-	qeasy()
-}
-
-func qeasy() {
-	rand.Seed(100)
+	time.Sleep(2 * time.Second)
+	points := 0
+	timenow := time.Now().UnixNano()
+	rand.Seed(timenow)
 	var subnum1 = rand.Intn(100)
 	var subnum2 = rand.Intn(100)
-	//var addnum1 = rand.Intn(100)
-	//var addnum2 = rand.Intn(100)
-	//var mulnum1 = rand.Intn(15)
-	//var mulnum2 = rand.Intn(15)
-	//var divnum1 = rand.Intn(100)
-	//var divnum2 = 2
-	fmt.Println("What is " + strconv.Itoa(subnum1) + " - " + strconv.Itoa(subnum2) + "?")
-	var answer = input.Ask("")
-	var thing = subnum1 - subnum2
-	if answer == strconv.Itoa(thing) {
-		fmt.Println("Correct")
+	var subnum3 = rand.Intn(1000)
+	var subnum4 = rand.Intn(1000)
+	var subnum5 = rand.Intn(1500)
+	var subnum6 = rand.Intn(1500)
+	var mulnum1 = rand.Intn(20)
+	var mulnum2 = rand.Intn(20)
+	var mulnum3 = rand.Intn(30)
+	var mulnum4 = rand.Intn(30)
+	var mulnum5 = rand.Intn(45)
+	var mulnum6 = rand.Intn(45)
+	fmt.Println(c.Clear + "Level 1: Questions are worth one point each.")
+	time.Sleep(2 * time.Second)
+	fmt.Println(c.Clear + "Q1: What is " + strconv.Itoa(subnum1) + " - " + strconv.Itoa(subnum2) + "?")
+	var answer = input.Ask(c.B3 + "")
+	var comp = subnum1 - subnum2
+	if answer == strconv.Itoa(comp) {
+		fmt.Println(c.Red + "Correct")
+		points += 1
 	} else {
-		fmt.Println("Incorrect")
+		fmt.Println(c.Red + "Incorrect")
 	}
+	time.Sleep(1 * time.Second)
+	fmt.Println(c.Clear + "Q2: What is " + strconv.Itoa(mulnum1) + " * " + strconv.Itoa(mulnum2) + "?")
+	answer = input.Ask(c.B3 + "")
+	comp = mulnum1 * mulnum2
+	if answer == strconv.Itoa(comp) {
+		fmt.Println(c.Red + "Correct")
+		points += 1
+	} else {
+		fmt.Println(c.Red + "Incorrect")
+	}
+	if points != 1 {
+		fmt.Println("You have " + strconv.Itoa(points) + " points")
+	} else {
+		fmt.Println("You have 1 point")
+	}
+	time.Sleep(2 * time.Second)
+	fmt.Println(c.Clear + "Level 2: Questions are worth two points each.")
+	time.Sleep(2 * time.Second)
+	fmt.Println(c.Clear + "Q3: What is " + strconv.Itoa(subnum3) + " - " + strconv.Itoa(subnum4) + "?")
+	answer = input.Ask(c.B3 + "")
+	comp = subnum3 - subnum4
+	if answer == strconv.Itoa(comp) {
+		fmt.Println(c.Red + "Correct")
+		points += 2
+	} else {
+		fmt.Println(c.Red + "Incorrect")
+	}
+	time.Sleep(1 * time.Second)
+	fmt.Println(c.Clear + "Q4: What is " + strconv.Itoa(mulnum3) + " * " + strconv.Itoa(mulnum4) + "?")
+	answer = input.Ask(c.B3 + "")
+	comp = mulnum3 * mulnum4
+	if answer == strconv.Itoa(comp) {
+		fmt.Println(c.Red + "Correct")
+		points += 2
+	} else {
+		fmt.Println(c.Red + "Incorrect")
+	}
+	if points != 1 {
+		fmt.Println("You have " + strconv.Itoa(points) + " points")
+	} else {
+		fmt.Println("You have 1 point")
+	}
+	time.Sleep(2 * time.Second)
+	fmt.Println(c.Clear + "Level 3: Questions are worth three points each.")
+	time.Sleep(2 * time.Second)
+	fmt.Println(c.Clear + "Q5: What is " + strconv.Itoa(subnum5) + " - " + strconv.Itoa(subnum6) + "?")
+	answer = input.Ask(c.B3 + "")
+	comp = subnum5 - subnum6
+	if answer == strconv.Itoa(comp) {
+		fmt.Println(c.Red + "Correct")
+		points += 3
+	} else {
+		fmt.Println(c.Red + "Incorrect")
+	}
+	time.Sleep(1 * time.Second)
+	fmt.Println(c.Clear + "Q6: What is " + strconv.Itoa(mulnum5) + " * " + strconv.Itoa(mulnum6) + "?")
+	answer = input.Ask(c.B3 + "")
+	comp = mulnum5 * mulnum6
+	if answer == strconv.Itoa(comp) {
+		fmt.Println(c.Red + "Correct")
+		points += 3
+	} else {
+		fmt.Println(c.Red + "Incorrect")
+	}
+	if points != 1 {
+		fmt.Println("You finished with " + strconv.Itoa(points) + " points")
+	} else {
+		fmt.Println("You finished with 1 point")
+	}
+	fmt.Println("The global average for points is 10")
 }
