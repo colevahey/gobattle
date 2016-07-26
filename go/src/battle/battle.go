@@ -72,7 +72,7 @@ func blue() {
 	fmt.Println(c.Clear + "Q2: What is " + strconv.Itoa(divnum1) + " / " + strconv.Itoa(divnum2) + "?")
 	answer = input.Ask(c.B3 + "")
 	comp = divnum1 / divnum2
-	if answer == strconv.Itoa(comp) {
+	if float64(answer) == comp {
 		fmt.Println(c.Blue + "Correct")
 		points += 1
 	} else {
@@ -99,7 +99,7 @@ func blue() {
 	fmt.Println(c.Clear + "Q4: What is " + strconv.Itoa(divnum3) + " / " + strconv.Itoa(divnum4) + "?")
 	answer = input.Ask(c.B3 + "")
 	comp = divnum3 / divnum4
-	if answer == strconv.Itoa(comp) {
+	if strconv.Atoi(answer) == comp {
 		fmt.Println(c.Blue + "Correct")
 		points += 2
 	} else {
@@ -126,7 +126,7 @@ func blue() {
 	fmt.Println(c.Clear + "Q6: What is " + strconv.Itoa(divnum5) + " / " + strconv.Itoa(divnum6) + "?")
 	answer = input.Ask(c.B3 + "")
 	comp = divnum5 / divnum6
-	if answer == strconv.Itoa(comp) {
+	if strconv.Atoi(answer) == comp {
 		fmt.Println(c.Blue + "Correct")
 		points += 3
 	} else {
