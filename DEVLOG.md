@@ -14,3 +14,11 @@ flashes on the screen.
 I am having a good bit of trouble with converting integers to strings.
 I will continue to work on it over the week so that I can get this
 program up and running.
+
+#July 25th
+I have a successful game up and running *if* you pick the red team.
+I am having some trouble with the division for the blue team because
+of having to deal with floats. I am so excited that the red team is
+working. I have to keep testing for bugs, and I hope that in the
+future, I will be able to save the high score and average scores in
+a json file which I can show at the end of the game.
