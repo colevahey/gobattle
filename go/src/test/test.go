@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/skilstak/go-input"
-	"strconv"
 )
 
 //func Marshal(v interface{}) ([]byte, error)
@@ -12,17 +11,16 @@ import (
 
 type Message struct {
 	Name string
-	Body string
-	Time int
+	Age  string
 }
 
 func main() {
-	namer := input.Ask("What is your name?")
-	m := Message{namer, "Hello", 12}
+	namer := input.Ask("What is your name? ")
+	ager := input.Ask("How old are you? ")
+	m := Message{namer, ager}
 	b, _ := json.Marshal(m)
-	var here Message
-	var _ = json.Unmarshal(b, &here)
-	fmt.Println("Name: " + here.Name)
-	fmt.Println("Body: " + here.Body)
-	fmt.Println("Time: " + strconv.Itoa(here.Time))
+	var data Message
+	var _ = json.Unmarshal(b, &data)
+	fmt.Println("Name: " + data.Name)
+	fmt.Println("Age: " + data.Age)
 }
