@@ -16,9 +16,17 @@ I will continue to work on it over the week so that I can get this
 program up and running.
 
 #July 25th
-I have a successful game up and running *if* you pick the red team.
+I have a successful game up and running **if** you pick the red team.
 I am having some trouble with the division for the blue team because
 of having to deal with floats. I am so excited that the red team is
 working. I have to keep testing for bugs, and I hope that in the
 future, I will be able to save the high score and average scores in
 a json file which I can show at the end of the game.
+
+#July 28th
+I have just figured out how to use json in a go script so I think
+I will be able to do a high score page at the end of the game. I need
+to figure out how to structure the high score page and I believe
+a problem will be posed because it is too easy to achieve the high
+score. I would like to add a time component to the game so that even
+with the high score, you can also compete with time.
