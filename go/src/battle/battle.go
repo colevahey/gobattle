@@ -147,7 +147,8 @@ func blue() {
 	} else {
 		fmt.Println("You finished with 1 point")
 	}
-	highscore()
+	time.Sleep(2 * time.Second)
+	highlist()
 }
 
 func red() {
@@ -254,9 +255,10 @@ func red() {
 	} else {
 		fmt.Println("You finished with 1 point")
 	}
-	highscore()
+	time.Sleep(2 * time.Second)
+	highlist()
 }
 
-func highscore() {
+func highlist() {
 	highscore.Highscore()
 }

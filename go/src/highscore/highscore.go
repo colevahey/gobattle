@@ -1,4 +1,4 @@
-package main
+package highscore
 
 import (
 	"encoding/json"
@@ -19,7 +19,7 @@ var b, _ = json.Marshal(t)
 var Data Top
 var _ = json.Unmarshal(b, &Data)
 
-func main() {
+func Highscore() {
 	if Data.Color == "blue" {
 		fmt.Println(c.Clear + c.B3 + "High Score: " + c.Blue + Data.Name + ", " + Data.Score)
 	} else if Data.Color == "red" {
