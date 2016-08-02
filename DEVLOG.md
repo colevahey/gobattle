@@ -35,3 +35,11 @@ with the high score, you can also compete with time.
 The json is up and running although I realized that the data won't
 save. I am very excited this is working and I will continue to get the
 kinks out.
+
+#August 2nd
+While the json is working, I am still trying to get it to save the
+high score unless it is beaten. I believe that if I can get the json
+to unmarshal the new data and to just leave the old high score alone,
+I can get it to work. I still haven't tried to do anything with the
+floats because I think that will be a simple task when I have
+completed the json. I am nearly done.

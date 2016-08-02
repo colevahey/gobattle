@@ -7,9 +7,7 @@ import (
 	"strconv"
 )
 
-var Name = ""
-var Points = 0
-var Color = ""
+var T = "This"
 
 type Top struct {
 	Name   string
@@ -17,10 +15,8 @@ type Top struct {
 	Color  string
 }
 
-var t = Top{Name, Points, Color}
-
 //The _ is the error which comes out as <nil>
-var b, _ = json.Marshal(t)
+var b, _ = json.Marshal(T)
 var Data Top
 var _ = json.Unmarshal(b, &Data)
 
