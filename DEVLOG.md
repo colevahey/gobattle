@@ -30,3 +30,8 @@ to figure out how to structure the high score page and I believe
 a problem will be posed because it is too easy to achieve the high
 score. I would like to add a time component to the game so that even
 with the high score, you can also compete with time.
+
+#August 1st
+The json is up and running although I realized that the data won't
+save. I am very excited this is working and I will continue to get the
+kinks out.
