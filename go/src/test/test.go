@@ -1,9 +1,8 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
-	"github.com/skilstak/go-input"
+	"hehe"
 )
 
 //func Marshal(v interface{}) ([]byte, error)
@@ -15,12 +14,7 @@ type Message struct {
 }
 
 func main() {
-	namer := input.Ask("What is your name? ")
-	ager := input.Ask("How old are you? ")
-	m := Message{namer, ager}
-	b, _ := json.Marshal(m)
-	var data Message
-	var _ = json.Unmarshal(b, &data)
-	fmt.Println("Name: " + data.Name)
-	fmt.Println("Age: " + data.Age)
+	fmt.Println("Name: " + hehe.Data.Name)
+	fmt.Println("Score: " + hehe.Data.Age)
+	fmt.Println(hehe.This)
 }
