@@ -4,7 +4,6 @@ import (
 	"fmt"
 	c "github.com/skilstak/go-colors"
 	"github.com/skilstak/go-input"
-	"highscore"
 	"math/rand"
 	"strconv"
 	"strings"
@@ -147,11 +146,11 @@ func blue() {
 	} else {
 		fmt.Println("You finished with 1 point")
 	}
-	if points >= highscore.Score {
+	if points >= highscore.Points {
 		fmt.Println("You got the high score!")
-		Player = highscore.Name
-		points = highscore.Points
-		highscore.Color = "blue"
+		Player = Name
+		points = Points
+		Color = "blue"
 	} else {
 		fmt.Print("")
 	}
@@ -263,11 +262,11 @@ func red() {
 	} else {
 		fmt.Println("You finished with 1 point")
 	}
-	if points >= highscore.Score {
+	if points >= highscore.Points {
 		fmt.Println("You got the high score!")
-		Player = highscore.Name
-		points = highscore.Points
-		highscore.Color = "red"
+		Player = Name
+		points = Points
+		Color = "red"
 	} else {
 		fmt.Print("")
 	}
@@ -275,6 +274,19 @@ func red() {
 	highlist()
 }
 
-func highlist() {
-	highscore.Highscore()
+type Top struct {
+	Name   string
+	Points int
+	Color  string
+}
+
+var t = Top{Name, Points, Color}
+
+//The _ is the error which comes out as <nil>
+var b, _ = json.Marshal(t)
+var Data Top
+var _ = json.Unmarshal(b, &Data)
+
+func Highscore() {
+	fmt.Println(c.Clear + c.B3 + "High Score: " + Data.Name + ", " + strconv.Itoa(Data.Points))
 }

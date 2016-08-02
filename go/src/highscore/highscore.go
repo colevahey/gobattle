@@ -25,11 +25,5 @@ var Data Top
 var _ = json.Unmarshal(b, &Data)
 
 func Highscore() {
-	if Data.Color == "blue" {
-		fmt.Println(c.Clear + c.B3 + "High Score: " + c.Blue + Data.Name + ", " + strconv.Itoa(Data.Points))
-	} else if Data.Color == "red" {
-		fmt.Println(c.Clear + c.B3 + "High Score: " + c.Red + Data.Name + ", " + strconv.Itoa(Data.Points))
-	} else {
-		fmt.Println("ERROR")
-	}
+	fmt.Println(c.Clear + c.B3 + "High Score: " + Data.Name + ", " + strconv.Itoa(Data.Points))
 }
