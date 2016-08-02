@@ -147,6 +147,14 @@ func blue() {
 	} else {
 		fmt.Println("You finished with 1 point")
 	}
+	if points >= highscore.Score {
+		fmt.Println("You got the high score!")
+		Player = highscore.Name
+		points = highscore.Points
+		highscore.Color = "blue"
+	} else {
+		fmt.Print("")
+	}
 	time.Sleep(2 * time.Second)
 	highlist()
 }
@@ -254,6 +262,14 @@ func red() {
 		fmt.Println("You finished with " + strconv.Itoa(points) + " points")
 	} else {
 		fmt.Println("You finished with 1 point")
+	}
+	if points >= highscore.Score {
+		fmt.Println("You got the high score!")
+		Player = highscore.Name
+		points = highscore.Points
+		highscore.Color = "red"
+	} else {
+		fmt.Print("")
 	}
 	time.Sleep(2 * time.Second)
 	highlist()
