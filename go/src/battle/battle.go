@@ -149,10 +149,6 @@ func blue() {
 	}
 	if points >= highscore.Data.Points {
 		fmt.Println("You got the high score!")
-		highscore.T = Top{Player, points, "blue"}
-		//Player = highscore.Name
-		//points = highscore.Points
-		//highscore.Color = "blue"
 	} else {
 		fmt.Print("")
 	}
@@ -266,10 +262,6 @@ func red() {
 	}
 	if points >= highscore.Data.Points {
 		fmt.Println("You got the high score!")
-		highscore.T = Top{Player, points, "red"}
-		//Player = highscore.Name
-		//points = highscore.Points
-		//highscore.Color = "red"
 	} else {
 		fmt.Print("")
 	}
@@ -278,5 +270,5 @@ func red() {
 }
 
 func Highlist() {
-	fmt.Println("The high score is 12")
+	highscore.Highscore()
 }

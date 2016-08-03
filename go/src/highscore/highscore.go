@@ -7,7 +7,7 @@ import (
 	"strconv"
 )
 
-var T = "This"
+var T = Top{"Player", 0, "red"}
 
 type Top struct {
 	Name   string
@@ -21,5 +21,7 @@ var Data Top
 var _ = json.Unmarshal(b, &Data)
 
 func Highscore() {
+	var Data Top
+	var _ = json.Unmarshal(b, &Data)
 	fmt.Println(c.Clear + c.B3 + "High Score: " + Data.Name + ", " + strconv.Itoa(Data.Points))
 }
