@@ -4,9 +4,11 @@ import (
 	"encoding/json"
 	"fmt"
 	c "github.com/skilstak/go-colors"
+	//"marshal"
 	"strconv"
 )
 
+var Player = "Turtle"
 var T = Top{"Player", 0, "red"}
 
 type Top struct {
@@ -21,7 +23,5 @@ var Data Top
 var _ = json.Unmarshal(b, &Data)
 
 func Highscore() {
-	var Data Top
-	var _ = json.Unmarshal(b, &Data)
 	fmt.Println(c.Clear + c.B3 + "High Score: " + Data.Name + ", " + strconv.Itoa(Data.Points))
 }
