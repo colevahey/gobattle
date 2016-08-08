@@ -4,7 +4,6 @@ import (
 	"fmt"
 	c "github.com/skilstak/go-colors"
 	"github.com/skilstak/go-input"
-	"highscore"
 	"math/rand"
 	"strconv"
 	"strings"
@@ -16,7 +15,7 @@ var Player = input.Ask(c.Clear + c.B3 + "Welcome to Gobattle\nWhat is your playe
 func main() {
 	fmt.Println(c.Clear + "Welcome " + strings.Title(Player))
 	time.Sleep(1 * time.Second)
-	fmt.Println("Gobattle is a single player game where you battle the global average to answer questions.")
+	fmt.Println("Gobattle is a single player game where you answer math questions to beat the high score.")
 	time.Sleep(1 * time.Second)
 	fmt.Println("There are two teams you can play with. The Blue Team and the Red Team.")
 	time.Sleep(1 * time.Second)
@@ -46,7 +45,7 @@ func main() {
 func blue() {
 	fmt.Println(c.Clear + "Welcome to the Blue Team.")
 	time.Sleep(2 * time.Second)
-	points := 0
+	Score := 0
 	timenow := time.Now().UnixNano()
 	rand.Seed(timenow)
 	var addnum1 = rand.Intn(100)
@@ -55,11 +54,11 @@ func blue() {
 	var addnum4 = rand.Intn(1000)
 	var addnum5 = rand.Intn(1500)
 	var addnum6 = rand.Intn(1500)
-	var divnum1 = rand.Intn(150)
+	var divnum1 = rand.Intn(500) * 2
 	var divnum2 = 2
-	var divnum3 = rand.Intn(80)
+	var divnum3 = rand.Intn(1000) * 3
 	var divnum4 = 3
-	var divnum5 = rand.Intn(60)
+	var divnum5 = rand.Intn(80) * 4
 	var divnum6 = 4
 	fmt.Println(c.Clear + "Level 1: Questions are worth one point each.")
 	time.Sleep(2 * time.Second)
@@ -68,7 +67,7 @@ func blue() {
 	var comp = addnum1 + addnum2
 	if answer == strconv.Itoa(comp) {
 		fmt.Println(c.Blue + "Correct")
-		points += 1
+		Score += 1
 	} else {
 		fmt.Println(c.Blue + "Incorrect")
 		fmt.Println("The correct answer was " + strconv.Itoa(comp))
@@ -79,13 +78,13 @@ func blue() {
 	comp = divnum1 / divnum2
 	if answer == strconv.Itoa(comp) {
 		fmt.Println(c.Blue + "Correct")
-		points += 1
+		Score += 1
 	} else {
 		fmt.Println(c.Blue + "Incorrect")
 		fmt.Println("The correct answer was " + strconv.Itoa(comp))
 	}
-	if points != 1 {
-		fmt.Println("You have " + strconv.Itoa(points) + " points")
+	if Score != 1 {
+		fmt.Println("You have " + strconv.Itoa(Score) + " points")
 	} else {
 		fmt.Println("You have 1 point")
 	}
@@ -97,7 +96,7 @@ func blue() {
 	comp = addnum3 + addnum4
 	if answer == strconv.Itoa(comp) {
 		fmt.Println(c.Blue + "Correct")
-		points += 2
+		Score += 2
 	} else {
 		fmt.Println(c.Blue + "Incorrect")
 		fmt.Println("The correct answer was " + strconv.Itoa(comp))
@@ -108,13 +107,13 @@ func blue() {
 	comp = divnum3 / divnum4
 	if answer == strconv.Itoa(comp) {
 		fmt.Println(c.Blue + "Correct")
-		points += 2
+		Score += 2
 	} else {
 		fmt.Println(c.Blue + "Incorrect")
 		fmt.Println("The correct answer was " + strconv.Itoa(comp))
 	}
-	if points != 1 {
-		fmt.Println("You have " + strconv.Itoa(points) + " points")
+	if Score != 1 {
+		fmt.Println("You have " + strconv.Itoa(Score) + " points")
 	} else {
 		fmt.Println("You have 1 point")
 	}
@@ -126,7 +125,7 @@ func blue() {
 	comp = addnum5 + addnum6
 	if answer == strconv.Itoa(comp) {
 		fmt.Println(c.Blue + "Correct")
-		points += 3
+		Score += 3
 	} else {
 		fmt.Println(c.Blue + "Incorrect")
 		fmt.Println("The correct answer was " + strconv.Itoa(comp))
@@ -137,29 +136,22 @@ func blue() {
 	comp = divnum5 / divnum6
 	if answer == strconv.Itoa(comp) {
 		fmt.Println(c.Blue + "Correct")
-		points += 3
+		Score += 3
 	} else {
 		fmt.Println(c.Blue + "Incorrect")
 		fmt.Println("The correct answer was " + strconv.Itoa(comp))
 	}
-	if points != 1 {
-		fmt.Println("You finished with " + strconv.Itoa(points) + " points")
+	if Score != 1 {
+		fmt.Println("You finished with " + strconv.Itoa(Score) + " points")
 	} else {
 		fmt.Println("You finished with 1 point")
 	}
-	if points >= highscore.Data.Points {
-		fmt.Println("You got the high score!")
-	} else {
-		fmt.Print("")
-	}
-	time.Sleep(2 * time.Second)
-	Highlist()
 }
 
 func red() {
 	fmt.Println(c.Clear + "Welcome to the Red Team.")
 	time.Sleep(2 * time.Second)
-	points := 0
+	Score := 0
 	timenow := time.Now().UnixNano()
 	rand.Seed(timenow)
 	var subnum1 = rand.Intn(100)
@@ -181,7 +173,7 @@ func red() {
 	var comp = subnum1 - subnum2
 	if answer == strconv.Itoa(comp) {
 		fmt.Println(c.Red + "Correct")
-		points += 1
+		Score += 1
 	} else {
 		fmt.Println(c.Red + "Incorrect")
 		fmt.Println("The correct answer was " + strconv.Itoa(comp))
@@ -192,13 +184,13 @@ func red() {
 	comp = mulnum1 * mulnum2
 	if answer == strconv.Itoa(comp) {
 		fmt.Println(c.Red + "Correct")
-		points += 1
+		Score += 1
 	} else {
 		fmt.Println(c.Red + "Incorrect")
 		fmt.Println("The correct answer was " + strconv.Itoa(comp))
 	}
-	if points != 1 {
-		fmt.Println("You have " + strconv.Itoa(points) + " points")
+	if Score != 1 {
+		fmt.Println("You have " + strconv.Itoa(Score) + " points")
 	} else {
 		fmt.Println("You have 1 point")
 	}
@@ -210,7 +202,7 @@ func red() {
 	comp = subnum3 - subnum4
 	if answer == strconv.Itoa(comp) {
 		fmt.Println(c.Red + "Correct")
-		points += 2
+		Score += 2
 	} else {
 		fmt.Println(c.Red + "Incorrect")
 		fmt.Println("The correct answer was " + strconv.Itoa(comp))
@@ -221,13 +213,13 @@ func red() {
 	comp = mulnum3 * mulnum4
 	if answer == strconv.Itoa(comp) {
 		fmt.Println(c.Red + "Correct")
-		points += 2
+		Score += 2
 	} else {
 		fmt.Println(c.Red + "Incorrect")
 		fmt.Println("The correct answer was " + strconv.Itoa(comp))
 	}
-	if points != 1 {
-		fmt.Println("You have " + strconv.Itoa(points) + " points")
+	if Score != 1 {
+		fmt.Println("You have " + strconv.Itoa(Score) + " points")
 	} else {
 		fmt.Println("You have 1 point")
 	}
@@ -239,7 +231,7 @@ func red() {
 	comp = subnum5 - subnum6
 	if answer == strconv.Itoa(comp) {
 		fmt.Println(c.Red + "Correct")
-		points += 3
+		Score += 3
 	} else {
 		fmt.Println(c.Red + "Incorrect")
 		fmt.Println("The correct answer was " + strconv.Itoa(comp))
@@ -250,25 +242,14 @@ func red() {
 	comp = mulnum5 * mulnum6
 	if answer == strconv.Itoa(comp) {
 		fmt.Println(c.Red + "Correct")
-		points += 3
+		Score += 3
 	} else {
 		fmt.Println(c.Red + "Incorrect")
 		fmt.Println("The correct answer was " + strconv.Itoa(comp))
 	}
-	if points != 1 {
-		fmt.Println("You finished with " + strconv.Itoa(points) + " points")
+	if Score != 1 {
+		fmt.Println("You finished with " + strconv.Itoa(Score) + " points")
 	} else {
 		fmt.Println("You finished with 1 point")
 	}
-	if points >= highscore.Data.Points {
-		fmt.Println("You got the high score!")
-	} else {
-		fmt.Print("")
-	}
-	time.Sleep(2 * time.Second)
-	Highlist()
-}
-
-func Highlist() {
-	highscore.Highscore()
 }
