@@ -43,3 +43,10 @@ to marshal the new data and to just leave the old high score alone,
 I can get it to work. I still haven't tried to do anything with the
 floats because I think that will be a simple task when I have
 completed the json. I am nearly done.
+
+#August 8th
+I have completed my project. I fixed the floats by getting rid of them
+completely... I made it so that the division problem will always
+return a whole number. Now my game is complete and if I have time,
+I will try to work on a high score page to be displayed at the end of
+the game. I am very excited I am done.
