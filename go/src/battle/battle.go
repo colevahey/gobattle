@@ -26,12 +26,12 @@ func main() {
 	fmt.Println(c.B3 + "Which team would you like to join?")
 	fmt.Println(c.Blue + "Blue Team" + c.B3 + " or " + c.Red + "Red Team" + c.B3 + "?")
 	var team = input.Ask(c.B3 + "")
-	team = strings.Title(team)
-	if team == "Blue Team" {
+	team = strings.ToLower(team)
+	if strings.HasPrefix(team, "blue") {
 		fmt.Println(c.Blue + "You have joined the Blue Team")
 		time.Sleep(1 * time.Second)
 		blue()
-	} else if team == "Red Team" {
+	} else if strings.HasPrefix(team, "red") {
 		fmt.Println(c.Red + "You have joined the Red Team")
 		time.Sleep(1 * time.Second)
 		red()
