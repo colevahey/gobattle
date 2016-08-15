@@ -1,2 +1,2 @@
 # gobattle
-A battle engine using Go-lang
+A math gaming engine written in Go-lang.
