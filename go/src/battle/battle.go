@@ -56,7 +56,7 @@ func blue() {
 	var addnum6 = rand.Intn(1500)
 	var divnum1 = rand.Intn(500) * 2
 	var divnum2 = 2
-	var divnum3 = rand.Intn(1000) * 3
+	var divnum3 = rand.Intn(500) * 3
 	var divnum4 = 3
 	var divnum5 = rand.Intn(80) * 4
 	var divnum6 = 4
