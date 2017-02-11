@@ -5,6 +5,7 @@ import (
 	c "github.com/skilstak/go-colors"
 	"github.com/skilstak/go-input"
 	"math/rand"
+	"os"
 	"strconv"
 	"strings"
 	"time"
