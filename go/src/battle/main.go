@@ -5,7 +5,7 @@ import (
 	c "github.com/skilstak/go-colors"
 	"github.com/skilstak/go-input"
 	"math/rand"
-	"os"
+	//"os"
 	"strconv"
 	"strings"
 	"time"
@@ -13,37 +13,7 @@ import (
 
 var Player = input.Ask(c.Clear + c.B3 + "Welcome to Gobattle\nWhat is your player name? >> ")
 
-func main() {
-	fmt.Println(c.Clear + "Welcome " + strings.Title(Player))
-	time.Sleep(1 * time.Second)
-	fmt.Println("Gobattle is a single player game where you answer math questions to beat the high score.")
-	time.Sleep(1 * time.Second)
-	fmt.Println("There are two teams you can play with. The Blue Team and the Red Team.")
-	time.Sleep(1 * time.Second)
-	fmt.Println(c.Blue + "The Blue Team focuses on addition and division")
-	time.Sleep(1 * time.Second)
-	fmt.Println(c.Red + "The Red Team focuses on subtraction and multiplication")
-	time.Sleep(1 * time.Second)
-	fmt.Println(c.B3 + "Which team would you like to join?")
-	fmt.Println(c.Blue + "Blue Team" + c.B3 + " or " + c.Red + "Red Team" + c.B3 + "?")
-	var team = input.Ask(c.B3 + "")
-	team = strings.ToLower(team)
-	if strings.HasPrefix(team, "blue") {
-		fmt.Println(c.Blue + "You have joined the Blue Team")
-		time.Sleep(1 * time.Second)
-		blue()
-	} else if strings.HasPrefix(team, "red") {
-		fmt.Println(c.Red + "You have joined the Red Team")
-		time.Sleep(1 * time.Second)
-		red()
-	} else {
-		fmt.Println(c.B3 + "That is not a team. Please choose again.")
-		time.Sleep(3 * time.Second)
-		main()
-	}
-}
-
-func blue() {
+func blue() int {
 	fmt.Println(c.Clear + "Welcome to the Blue Team.")
 	time.Sleep(2 * time.Second)
 	Score := 0
@@ -147,9 +117,10 @@ func blue() {
 	} else {
 		fmt.Println("You finished with 1 point")
 	}
+	return Score
 }
 
-func red() {
+func red() int {
 	fmt.Println(c.Clear + "Welcome to the Red Team.")
 	time.Sleep(2 * time.Second)
 	Score := 0
@@ -253,4 +224,37 @@ func red() {
 	} else {
 		fmt.Println("You finished with 1 point")
 	}
+	return Score
+}
+
+func main() {
+	finalscore := 0
+	fmt.Println(c.Clear + "Welcome " + strings.Title(Player))
+	time.Sleep(1 * time.Second)
+	fmt.Println("Gobattle is a single player game where you answer math questions to beat the high score.")
+	time.Sleep(1 * time.Second)
+	fmt.Println("There are two teams you can play with. The Blue Team and the Red Team.")
+	time.Sleep(1 * time.Second)
+	fmt.Println(c.Blue + "The Blue Team focuses on addition and division")
+	time.Sleep(1 * time.Second)
+	fmt.Println(c.Red + "The Red Team focuses on subtraction and multiplication")
+	time.Sleep(1 * time.Second)
+	fmt.Println(c.B3 + "Which team would you like to join?")
+	fmt.Println(c.Blue + "Blue Team" + c.B3 + " or " + c.Red + "Red Team" + c.B3 + "?")
+	var team = input.Ask(c.B3 + "")
+	team = strings.ToLower(team)
+	if strings.HasPrefix(team, "blue") {
+		fmt.Println(c.Blue + "You have joined the Blue Team")
+		time.Sleep(1 * time.Second)
+		finalscore = blue()
+	} else if strings.HasPrefix(team, "red") {
+		fmt.Println(c.Red + "You have joined the Red Team")
+		time.Sleep(1 * time.Second)
+		finalscore = red()
+	} else {
+		fmt.Println(c.B3 + "That is not a team. Please choose again.")
+		time.Sleep(3 * time.Second)
+		main()
+	}
+	fmt.Println(finalscore)
 }
